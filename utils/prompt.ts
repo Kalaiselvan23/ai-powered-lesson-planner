@@ -1,4 +1,5 @@
-import { LessonPlan } from "@/app/lesson-planner/page";
+import { LessonPlan } from "@/types/lessonPlan";
+
 export const getLessonPlannerPrompt = (lessonPlan: LessonPlan) => {
   return `Generate a structured lesson plan in JSON format with the following details:
   

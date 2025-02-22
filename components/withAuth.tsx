@@ -1,22 +1,28 @@
 "use client";
-import { useEffect } from "react";
-import { redirect } from "next/navigation";
 
+import { useEffect, useState } from "react";
+import { useRouter } from "next/navigation";
+import { ComponentType } from "react";
 
-export default function isAuth(Component: any) {
-    return function IsAuth(props: any) {
-        const auth = localStorage.getItem("user");
-        useEffect(() => {
-            if (!auth) {
-                
-                return redirect("/");
-            }
-        }, []);
+export default function withAuth<T extends object>(Component: ComponentType<T>) {
+  return function IsAuth(props: T) {
+    const router = useRouter();
+    const [isLoading, setIsLoading] = useState(true);
 
-        if (!auth) {
-            return null;
+    useEffect(() => {
+      if (typeof window !== "undefined") {
+        const storedAuth = localStorage.getItem("user");
+        if (!storedAuth) {
+          router.replace("/");
         }
+        setIsLoading(false);
+      }
+    },[router]);
 
-        return <Component {...props} />;
-    };
+    if (isLoading) {
+      return null;
+    }
+
+    return <Component {...props} />;
+  };
 }

@@ -1,3 +1,4 @@
+import { LessonPlan } from "@/types/lessonPlan";
 import { Document, Page, Text, View, StyleSheet } from "@react-pdf/renderer";
 
 const styles = StyleSheet.create({
@@ -7,7 +8,7 @@ const styles = StyleSheet.create({
   sectionTitle: { fontSize: 16, fontWeight: "bold", backgroundColor: "blue", color: "white", padding: 5 },
   content: { fontSize: 12, marginLeft: 10 },
   footer: { fontSize: 10, textAlign: "center", marginTop: 10, position: "absolute", bottom: 10, left: 0, right: 0 },
-  table: { display: "table", width: "100%", borderStyle: "solid", borderWidth: 1, marginBottom: 10 },
+  table: {  width: "100%", borderStyle: "solid", borderWidth: 1, marginBottom: 10 },
   row: { flexDirection: "row", borderBottomWidth: 1 },
   headerCell: { backgroundColor: "#635DFF", color: "white", padding: 5, fontWeight: "bold", flex: 1, textAlign: "center" },
   cell: { padding: 5, flex: 1, textAlign: "center" },
@@ -16,7 +17,7 @@ const styles = StyleSheet.create({
   notesContent: { fontSize: 12, marginLeft: 10, marginTop: 5, marginRight: 10, lineHeight: 1.5 }, // Added style for notes
 });
 
-const LessonPlanPDF = ({ lessonPlan }) => {
+const LessonPlanPDF = ({ lessonPlan }:{lessonPlan:LessonPlan}) => {
   return (
     <Document>
       <Page size="A4" style={styles.page}>

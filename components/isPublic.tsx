@@ -1,10 +1,10 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, ComponentType } from "react";
 import { useRouter } from "next/navigation";
 
-export default function isPublicRoute(Component: any) {
-    return function IsPublicRoute(props: any) {
+export default function isPublicRoute<T extends object>(Component: ComponentType<T>) {
+    return function IsPublicRoute(props: T) {
         const router = useRouter();
         const [isLoading, setIsLoading] = useState(true);
 
