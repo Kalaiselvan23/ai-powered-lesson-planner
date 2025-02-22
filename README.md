@@ -1,36 +1,131 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# AI-Powered Lesson Planner
+
+A modern web application that helps teachers create comprehensive lesson plans using AI assistance. Built with Next.js, TypeScript, and shadcn/ui components.
+
+## Features
+
+- 🤖 AI-powered lesson plan generation
+- 📝 Interactive form-based lesson plan creation
+- 💾 Automatic saving of work in progress
+- 📋 Comprehensive lesson plan components:
+  - Basic information
+  - Subtopics
+  - Materials needed
+  - Learning objectives
+  - Lesson activities
+  - Additional notes
+- 📑 PDF export functionality
+- 🔐 Authentication system
+- 🎨 Modern UI with shadcn/ui components
+
+## Tech Stack
+
+- **Framework**: Next.js 14 with App Router
+- **Language**: TypeScript
+- **UI Components**: shadcn/ui
+- **Styling**: Tailwind CSS
+- **PDF Generation**: @react-pdf/renderer
+- **Authentication**: Custom auth implementation
+- **AI Integration**: Google's Gemini API
+- **State Management**: React useState and useEffect
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
+
+- Node.js 18.x or later
+- npm or yarn
+- Google Gemini API key
+
+### Installation
+
+1. Clone the repository:
+
+```bash
+git clone https://github.com/Kalaiselvan23/ai-powered-lesson-planner
+cd lesson-planner
+```
+
+2. Install dependencies:
+
+```bash
+npm install
+# or
+yarn install
+```
+
+3. Create a `.env.local` file in the root directory and add your environment variables:
+
+```env
+GOOGLE_GEMINI_API_KEY=your_api_key_here
+```
+
+4. Run the development server:
 
 ```bash
 npm run dev
 # or
 yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+5. Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Project Structure
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```
+src/
+├── app/                    # Next.js app router pages
+├── components/             # React components
+│   ├── ui/                # shadcn/ui components
+│   ├── LessonPDF.tsx      # PDF generation component
+│   └── LogoutBtn.tsx      # Logout button component
+├── types/                 # TypeScript type definitions
+│   └── lessonPlan.ts      # Lesson plan related types
+├── utils/                 # Utility functions
+│   ├── geminiApi.ts       # AI API integration
+│   └── prompt.ts          # AI prompt templates
+└── hooks/                 # Custom React hooks
+    └── use-toast.ts       # Toast notification hook
+```
 
-## Learn More
+## Usage
 
-To learn more about Next.js, take a look at the following resources:
+1. **Authentication**: Log in to access the lesson planner
+2. **Create New Lesson Plan**: Fill in the basic information section
+3. **Add Components**: Build your lesson plan with various sections
+4. **Generate with AI**: Click "Generate Lesson Plan" for AI assistance
+5. **Export**: Download your lesson plan as a PDF
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Features in Detail
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Basic Information
 
-## Deploy on Vercel
+- Topic
+- Grade Level
+- Main Concept
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Lesson Components
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- Subtopics list
+- Required materials
+- Learning objectives
+- Detailed lesson activities with duration and guides
+- Additional notes and considerations
+
+### AI Generation
+
+The system uses Google's Gemini API to generate:
+
+- Suggested lesson structure
+- Learning objectives
+- Activity ideas
+- Material recommendations
+
+### PDF Export
+
+Generate professional PDFs including:
+
+- Lesson overview
+- All components organized clearly
+- Activity timeline
+- Notes and materials
