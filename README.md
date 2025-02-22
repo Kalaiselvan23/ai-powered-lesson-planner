@@ -40,39 +40,39 @@ A modern web application that helps teachers create comprehensive lesson plans u
 ### Installation
 
 1. Clone the repository:
-
-```bash
-git clone https://github.com/Kalaiselvan23/ai-powered-lesson-planner
-cd lesson-planner
-```
+   ```bash
+   git clone https://github.com/Kalaiselvan23/ai-powered-lesson-planner
+   cd lesson-planner
+   ```
 
 2. Install dependencies:
-
-```bash
-npm install
-# or
-yarn install
-```
+   ```bash
+   npm install # or yarn install
+   ```
 
 3. Create a `.env.local` file in the root directory and add your environment variables:
-
-```env
-GOOGLE_GEMINI_API_KEY=your_api_key_here
-```
+   ```env
+   GOOGLE_GEMINI_API_KEY=your_api_key_here
+   ```
 
 4. Run the development server:
-
-```bash
-npm run dev
-# or
-yarn dev
-```
+   ```bash
+   npm run dev # or yarn dev
+   ```
 
 5. Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
+## Default Credentials
+
+For initial access, you can use the following credentials:
+
+- **Username**: `admin@example.com`
+- **Password**: `password123`
+
+
 ## Project Structure
 
-```
+```plaintext
 src/
 ├── app/                    # Next.js app router pages
 ├── components/             # React components
@@ -99,13 +99,11 @@ src/
 ## Features in Detail
 
 ### Basic Information
-
 - Topic
 - Grade Level
 - Main Concept
 
 ### Lesson Components
-
 - Subtopics list
 - Required materials
 - Learning objectives
@@ -113,19 +111,16 @@ src/
 - Additional notes and considerations
 
 ### AI Generation
-
 The system uses Google's Gemini API to generate:
-
 - Suggested lesson structure
 - Learning objectives
 - Activity ideas
 - Material recommendations
 
 ### PDF Export
-
 Generate professional PDFs including:
-
 - Lesson overview
 - All components organized clearly
 - Activity timeline
 - Notes and materials
+
